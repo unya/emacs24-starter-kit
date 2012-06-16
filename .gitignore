@@ -40,3 +40,7 @@ mail
 /#.newsrc-dribble#
 *.SCORE
 marks
+
+%*%
+.starter-kit*.part*.org
+*~
