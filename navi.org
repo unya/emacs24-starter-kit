@@ -50,6 +50,25 @@
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "lisp" "common-lisp")
 #+END_SRC
+
+* Distel
+  Loading erlang-mode
+#+BEGIN_SRC emacs-lisp
+  (add-to-list
+   'load-path
+       (car (file-expand-wildcards "/usr/lib/erlang/lib/tools-*/emacs")))
+#+END_SRC
+
+  Adding paths for distel:
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'load-path "~/.emacs.d/src/distel/elisp")
+#+END_SRC
+
+  Loading distel:
+#+BEGIN_SRC emacs-lisp
+  (require 'distel)
+  (distel-setup)
+#+END_SRC
 * Customizations
 
 #+BEGIN_SRC emacs-lisp
