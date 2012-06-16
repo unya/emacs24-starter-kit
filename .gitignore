@@ -51,6 +51,7 @@ secret.org
 .emacs.desktop*
 .*~
 agent/*
+
 %*%
 .starter-kit*.part*.org
 *~
