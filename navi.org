@@ -103,14 +103,13 @@
     (slime-setup '(slime-fancy slime-asdf
                                slime-banner
                                slime-compiler-notes-tree
-                               slime-highlight-edits
+;                               slime-highlight-edits
                                slime-hyperdoc
                                slime-indentation
     ;                           slime-media
                                slime-sprof
                                slime-xref-browser
-                               slime-sbcl-exts
-                               slime-mdot-fu))
+                               slime-sbcl-exts))
     (eval-after-load 'slime
       '(progn
         (define-key slime-mode-map (kbd "<f12>")
@@ -134,4 +133,9 @@
 (setq org-directory "~/Dropbox/org")
 (setq org-default-notes-file "~/Dropbox/org/notes.org")
 
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'load-path "~/.emacs.d/src/o-blog")
+(require 'o-blog)
 #+END_SRC
