@@ -6,6 +6,10 @@
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "org")
 #+END_SRC
+<<<<<<< HEAD
+=======
+
+>>>>>>> Revert "Some changes to lisp support"
 ** Haskell
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "haskell")
@@ -81,51 +85,50 @@
   Old code!
 
 #+BEGIN_SRC emacs-lisp
-      (setq visible-bell nil
-            fringe-mode nil)
+    (setq visible-bell nil
+          fringe-mode nil)
 
-      (setq inferior-lisp-program "sbcl")
-      ;;; W3M as default browser
-      (require 'w3m)
-      (setq browse-url-browser-function 'w3m-browse-url)
+    (setq inferior-lisp-program "sbcl")
+    ;;; W3M as default browser
+    (require 'w3m)
+    (setq browse-url-browser-function 'w3m-browse-url)
 
-      ;;; Dired
-      (require 'dired)
-      (eval-after-load 'dired
-        '(define-key dired-mode-map (kbd "b")
-           'browse-url-of-dired-file))
+    ;;; Dired
+    (require 'dired)
+    (eval-after-load 'dired
+      '(define-key dired-mode-map (kbd "b")
+         'browse-url-of-dired-file))
 
-      ;;; SLIME modifications
-      (load (expand-file-name "~/quicklisp/slime-helper.el"))
-      ;; Replace "sbcl" with the path to your implementation
-      (setq inferior-lisp-program "sbcl")
-      (slime-setup '(slime-fancy slime-asdf
-                                 slime-banner
-                                 slime-compiler-notes-tree
-  ;                               slime-highlight-edits
-                                 slime-hyperdoc
-                                 slime-indentation
-      ;                           slime-media
-                                 slime-sprof
-                                 slime-xref-browser
-                                 ;slime-sbcl-exts
-                                 ))
-      (eval-after-load 'slime
-        '(progn
-          (define-key slime-mode-map (kbd "<f12>")
-            'slime-selector)
-          (define-key slime-mode-map (kbd "<f1>")
-            'hyperspec-lookup)))
-      (eval-after-load 'slime-repl
-        '(progn
-          (define-key slime-repl-mode-map (kbd "<f12>")
-            'slime-selector)
-          (define-key slime-repl-mode-map (kbd "<f1>")
-            'hyperspec-lookup)
-          (define-key slime-mode-map (kbd "<f9>")
-            'slime-compile-file)))
-      (setq common-lisp-hyperspec-root "/usr/share/doc/hyperspec/HyperSpec/")
-      
+    ;;; SLIME modifications
+    (load (expand-file-name "~/quicklisp/slime-helper.el"))
+    ;; Replace "sbcl" with the path to your implementation
+    (setq inferior-lisp-program "sbcl")
+    (slime-setup '(slime-fancy slime-asdf
+                               slime-banner
+                               slime-compiler-notes-tree
+;                               slime-highlight-edits
+                               slime-hyperdoc
+                               slime-indentation
+    ;                           slime-media
+                               slime-sprof
+                               slime-xref-browser
+                               slime-sbcl-exts))
+    (eval-after-load 'slime
+      '(progn
+        (define-key slime-mode-map (kbd "<f12>")
+          'slime-selector)
+        (define-key slime-mode-map (kbd "<f1>")
+          'hyperspec-lookup)))
+    (eval-after-load 'slime-repl
+      '(progn
+        (define-key slime-repl-mode-map (kbd "<f12>")
+          'slime-selector)
+        (define-key slime-repl-mode-map (kbd "<f1>")
+          'hyperspec-lookup)
+        (define-key slime-mode-map (kbd "<f9>")
+          'slime-compile-file)))
+    (setq common-lisp-hyperspec-root "/usr/share/doc/HyperSpec/")
+    
 #+END_SRC
 ** Org-Mode
 #+BEGIN_SRC emacs-lisp
