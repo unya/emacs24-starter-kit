@@ -40,6 +40,16 @@
 (starter-kit-load "lisp" "parenthesis-faces")
 #+END_SRC
 
+*** Clojure
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "clojure")
+
+(add-hook 'nrepl-interaction-mode-hook
+  'nrepl-turn-on-eldoc-mode)
+(setq nrepl-popup-stacktraces nil)
+
+
+#+END_SRC 
 *** Emacs Lisp
     Load Emacs-Lisp customization.
 #+BEGIN_SRC emacs-lisp
@@ -50,6 +60,8 @@
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "lisp" "common-lisp")
 #+END_SRC
+
+
 
 * Distel
   Loading erlang-mode
