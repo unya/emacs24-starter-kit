@@ -1,0 +1,34 @@
+#+TITLE: My personal additions
+#+OPTIONS: toc:nil num:nil ^:nil
+
+* Description
+
+  Personal bits'n'pieces common to all machines
+
+* Loading parts of starter kit
+** Org-mode
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "org")
+#+END_SRC
+
+** Lisp
+
+   Common things for Lisp coding, not dependant on specific implementations/environment.
+
+   First, let's load bindings.
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "keys")
+#+END_SRC
+
+   Paredit too!
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "paredit")
+#+END_SRC
+
+   Change faces for parens
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "parenthesis-faces")
+#+END_SRC
