@@ -6,6 +6,13 @@
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "org")
 #+END_SRC
+** Misc
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "misc")
+(starter-kit-load "misc-recommended")
+#+END_SRC
+
    
 ** Haskell
 #+BEGIN_SRC emacs-lisp
@@ -19,6 +26,12 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
 
 #+END_SRC
+
+** Ruby
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "ruby")
+#+END_SRC
+
 
 ** Lisp
 
