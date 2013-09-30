@@ -134,8 +134,3 @@
 (setq org-default-notes-file "~/Dropbox/org/notes.org")
 
 #+END_SRC
-
-#+BEGIN_SRC emacs-lisp
-(add-to-list 'load-path "~/.emacs.d/src/o-blog")
-(require 'o-blog)
-#+END_SRC
