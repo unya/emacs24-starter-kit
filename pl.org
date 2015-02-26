@@ -112,6 +112,10 @@ Setup few extra keybindings in SLIME:
 (starter-kit-load "org")
 #+END_SRC
 
+* LaTeX
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "latex")
+#+END_SRC
 * Loading parts of starter kit
 ** Misc and recommended misc. 
 #+BEGIN_SRC emacs-lisp
