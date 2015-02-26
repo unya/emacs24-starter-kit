@@ -159,3 +159,10 @@ Setup few extra keybindings in SLIME:
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "ruby")
 #+END_SRC
+
+** Python
+
+#+BEGIN_SRC emacs-lisp
+;(starter-kit-load "python")
+#+END_SRC
+
