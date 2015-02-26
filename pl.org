@@ -153,3 +153,9 @@ Setup few extra keybindings in SLIME:
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "lisp" "common-lisp")
 #+END_SRC
+
+** Ruby
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "ruby")
+#+END_SRC
