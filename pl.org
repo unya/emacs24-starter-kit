@@ -1,14 +1,122 @@
 #+TITLE: My personal additions
+#+AUTHOR: Paweł Lasek <pawel.lasek@gmail.com>
 #+OPTIONS: toc:nil num:nil ^:nil
 
 * Description
 
   Personal bits'n'pieces common to all machines
 
-* Loading parts of starter kit
-** Org-mode
+* Customization
+
+** UI
+
+   Change theme and remove toolbar, as well as disable trashcan.
+
+#+BEGIN_SRC emacs-lisp
+  (tool-bar-mode -1)
+  (load-theme 'tango-dark)
+  (setq visible-bell nil)
+  (setq fringe-mode 'default)
+#+END_SRC
+
+  Uniquify buffer name style - post-forward
+
+#+BEGIN_SRC emacs-lisp
+  (setq uniquify-buffer-name-style 'post-forward)
+#+END_SRC
+
+** Behaviour
+
+*** Disable trash can handling
+
+ #+BEGIN_SRC emacs-lisp
+   (setq delete-by-moving-to-trash nil)
+ #+END_SRC
+
+
+** Dired
+
+Define 'b' key to open the file in browser
+
+#+BEGIN_SRC emacs-lisp
+(eval-after-load 'dired  
+        '(define-key dired-mode-map (kbd "b")
+           'browse-url-of-dired-file))
+#+END_SRC
+
+** Browsing
+   Configure w3m as default browser
+   #+BEGIN_SRC emacs-lisp
+          ;(require 'w3m)
+     (eval-after-load 'browse-url
+       '(progn (setq browse-url-browser-function 'w3m-browse-url)))
+   #+END_SRC
+
+* SLIME Setup
+  Configure SLIME modules
+
+#+BEGIN_SRC emacs-lisp
+  (eval-after-load 'slime
+    '(progn '(slime-setup '(slime-fancy slime-asdf
+                               slime-banner
+                               slime-compiler-notes-tree
+                               slime-hyperdoc
+                               slime-indentation
+                               slime-sprof
+                               slime-xref-browser))))
+#+END_SRC
+
+Setup few extra keybindings in SLIME:
+  - F1 :: Hyperspec lookup
+  - F9 :: Compile file
+  - F12 :: Slime selector
+
+#+BEGIN_SRC emacs-lisp
+  (eval-after-load 'slime
+    '(progn
+       (define-key slime-mode-map (kbd "<f12>")
+         'slime-selector)
+       (define-key slime-mode-map (kbd "<f1>")
+         'hyperspec-lookup)))
+  (eval-after-load 'slime-repl
+    '(progn (define-key slime-repl-mode-map (kbd "<f12>")
+              'slime-selector)
+            (define-key slime-repl-mode-map (kbd "<f1>")
+              'hyperspec-lookup)
+            (define-key slime-mode-map (kbd "<f9>")
+              'slime-compile-file)))
+#+END_SRC
+** Quicklisp SLIME helper
+   
+#+BEGIN_SRC emacs-lisp
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+#+END_SRC
+
+** Hyperspec 
+
+   Sets location of HyperSpec
+
+   #+BEGIN_SRC emacs-lisp
+   (setq common-lisp-hyperspec-root "/usr/share/doc/hyperspec/HyperSpec/")
+   #+END_SRC
+
+* Org-Mode
+** Configuration
+  Default notes file
+
+#+BEGIN_SRC emacs-lisp
+(setq org-default-notes-file "~/Dropbox/org/notes.org")
+#+END_SRC
+** Load Org-Mode
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "org")
+#+END_SRC
+
+* Loading parts of starter kit
+** Misc and recommended misc. 
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "misc")
+(starter-kit-load "misc-recommended")
 #+END_SRC
 
 ** Lisp
@@ -31,4 +139,17 @@
 
 #+BEGIN_SRC emacs-lisp
 (starter-kit-load "lisp" "parenthesis-faces")
+#+END_SRC
+
+*** Emacs Lisp
+    Load Emacs-Lisp customization.
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "emacs-lisp")
+#+END_SRC
+
+
+
+*** Common Lisp
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "lisp" "common-lisp")
 #+END_SRC

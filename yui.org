@@ -1,0 +1,10 @@
+#+AUTHOR: Pawel Lasek
+#+TITLE: Yui specific init
+
+* Customizations
+
+#+BEGIN_SRC emacs-lisp      
+      ;; Replace "sbcl" with the path to your implementation
+      (setq inferior-lisp-program "sbcl")
+#+END_SRC
+
