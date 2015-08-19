@@ -8,6 +8,19 @@
 
 * Customization
 
+** use-package
+
+#+BEGIN_SRC emacs-lisp
+(starter-kit-load "use-package")
+#+END_SRC
+
+** PATH
+
+#+BEGIN_SRC emacs-lisp
+(setenv "PATH" (concat "/home/pl/root/bin:" (getenv "PATH")))
+(setq exec-path (cons '("/home/pl/root/bin") exec-path))
+#+END_SRC
+
 ** UI
 
    Change theme and remove toolbar, as well as disable trashcan.

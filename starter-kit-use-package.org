@@ -1,0 +1,14 @@
+#+TITLE: Support use-package
+#+OPTIONS: toc:2 num:nil ^:nil
+
+
+* Setup use-package
+
+#+BEGIN_SRC emacs-lisp
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+(setq use-package-verbose t)
+(require 'use-package)
+
+#+END_SRC
+
